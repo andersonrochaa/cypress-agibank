@@ -1,37 +1,31 @@
 /// <reference types="cypress" />
-// ***********************************************
-// This example commands.ts shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+
+Cypress.Commands.add('realizarPesquisa', (search) => { 
+    cy.get('.slide-search')
+        .first().click()
+    cy.get('[name="s"]', { timeout: 100000 })
+        .should('be.visible')
+        .type(search).type('{enter}')
+ })
+
+ Cypress.Commands.add('validarPesquisa', (search) => {
+    /*
+    cy.get('[itemprop="headline"]').each(($title) =>
+        expect($title.text().toLowerCase()).to.contains(search.toLowerCase())
+     )
+     */
+     cy.get('[itemprop="headline"]').first().contains(search.toLowerCase(), { matchCase: false })
+ })
+
+ Cypress.Commands.add('validarMensagemPesquisaInvalida', () => {
+     cy.contains('Lamentamos, mas nada foi encontrado para sua pesquisa, tente novamente com outras palavras.')
+     .should("be.visible")
+ })
+
+ declare namespace Cypress {
+    interface Chainable<Subject = any> {
+        realizarPesquisa(search: string): Chainable<any>
+        validarPesquisa(contains: string): Chainable<any>
+        validarMensagemPesquisaInvalida(): Chainable<any>
+    }
+}
