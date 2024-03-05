@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run headless –spec cypress/e2e/search.cy.js"
+    "cypress:run": "cypress run --spec 'cypress/e2e/*.ts'"
   },
   "keywords": [],
   "author": "",
