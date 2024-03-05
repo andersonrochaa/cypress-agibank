@@ -1,6 +1,6 @@
 describe('Search bar em blog do Agi', () => {
   beforeEach(() => {
-    cy.visit((Cypress.config().baseUrl)!.toString())
+    cy.visit("/")
     cy.viewport(1920, 1080)
   })
 
