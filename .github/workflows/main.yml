@@ -11,4 +11,4 @@ jobs:
           cache: 'npm'
           cache-dependency-path: subdir/package-lock.json
       - name: Cypress run
-      - run: npm test
+        run: npm test
