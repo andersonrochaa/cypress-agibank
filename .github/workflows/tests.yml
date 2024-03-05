@@ -4,6 +4,8 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
+      - name: Movendo diretório
+        run: cd /home/runner/work/cypress-agibank
       - name: Checkout
         uses: actions/checkout@v3
       - name: Cypress run
