@@ -39,6 +39,3 @@ public/mockServiceWorker.js
 # Env files
 .env*
 !.env.example
-
-# Lock files
-*-lock*
