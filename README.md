@@ -41,6 +41,12 @@ npx cypress open
 
 > Foi configurado baseurl e variáveis do mochaawesome-reporter.
 
+## MOCHAAWESOME-REPORTER
+
+<img src="/screenshots/mochaawesome.png">
+
+> Recurso instalado para criar documentações sobre execuções. Ideial para salvar ao rodar pipelines, agilizando o processo de analise de erros.
+
 ## CI
 
 > Foi configurado um workflow o Cypress executar em uma pipeline. Isso permite a automação dos testes em um ambiente contínuo.

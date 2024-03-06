@@ -9,7 +9,7 @@ Cypress.Commands.add('realizarPesquisa', (search) => {
  })
 
  Cypress.Commands.add('validarPesquisa', (search) => {
-    /*
+    /* Exemplo de validação em mais de 1 elemento.
     cy.get('[itemprop="headline"]').each(($title) =>
         expect($title.text().toLowerCase()).to.contains(search.toLowerCase())
      )
