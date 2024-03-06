@@ -17,8 +17,8 @@ Cypress.Commands.add('realizarPesquisa', (search) => {
      cy.get('[itemprop="headline"]').first().contains(search.toLowerCase(), { matchCase: false })
  })
 
- Cypress.Commands.add('validarMensagemPesquisaInvalida', () => {
-     cy.contains('Lamentamos, mas nada foi encontrado para sua pesquisa, tente novamente com outras palavras.')
+ Cypress.Commands.add('validarMensagemPesquisaInvalida', (mensagem) => {
+     cy.contains(mensagem)//Lamentamos, mas nada foi encontrado para sua pesquisa, tente novamente com outras palavras.
      .should("be.visible")
  })
 
@@ -26,6 +26,6 @@ Cypress.Commands.add('realizarPesquisa', (search) => {
     interface Chainable<Subject = any> {
         realizarPesquisa(search: string): Chainable<any>
         validarPesquisa(contains: string): Chainable<any>
-        validarMensagemPesquisaInvalida(): Chainable<any>
+        validarMensagemPesquisaInvalida(mensagem: string): Chainable<any>
     }
 }
