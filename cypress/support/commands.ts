@@ -18,8 +18,7 @@ Cypress.Commands.add('realizarPesquisa', (search) => {
  })
 
  Cypress.Commands.add('validarMensagemPesquisaInvalida', (mensagem) => {
-     cy.contains(mensagem)//Lamentamos, mas nada foi encontrado para sua pesquisa, tente novamente com outras palavras.
-     .should("be.visible")
+     cy.contains(mensagem).should("be.visible")
  })
 
  declare namespace Cypress {
