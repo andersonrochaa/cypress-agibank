@@ -31,7 +31,7 @@ npx cypress open
 
 > O projeto contém dois cenários de testes, ambos implementados de maneira limpa e concisa. Utilizei um hook na parte superior da página, com o comando visit (URL já configurada no baseUrl) e a manipulação da viewport.
 
-> Preferi não utilizar strings hardcoded para os parâmetros das funções, optando por criar um objeto ou JSON para armazenar essas informações. No entanto, devido ao baixo número de informações, mantive a abordagem inicial.
+> Preferi não utilizar strings marretadas para os parâmetros das funções, optando por criar um objeto ou JSON para armazenar essas informações. No entanto, devido ao baixo número de informações, mantive a abordagem inicial.
 
 <img src="/screenshots/commands.png">
 
